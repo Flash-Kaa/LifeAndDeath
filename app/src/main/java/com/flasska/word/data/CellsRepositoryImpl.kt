@@ -2,18 +2,13 @@ package com.flasska.word.data
 
 import com.flasska.word.domain.entities.CellType
 import com.flasska.word.domain.interfaces.CellsRepository
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class CellsRepositoryImpl : CellsRepository {
     private val _cellsList: MutableStateFlow<List<CellType>> = MutableStateFlow(listOf())
-    val cellsList = _cellsList.asStateFlow()
-
-    override fun getCells(): Flow<List<CellType>> {
-        return cellsList
-    }
+    override val cellsList = _cellsList.asStateFlow()
 
     override fun addCell(cell: CellType) {
         _cellsList.update { it + cell }

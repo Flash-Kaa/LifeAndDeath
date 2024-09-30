@@ -6,7 +6,6 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
@@ -21,7 +20,7 @@ class GenerateCellsUseCase(
         coroutineScope.launch {
             val randomCellType = getRandomCell()
 
-            val list = repository.getCells().last() + randomCellType
+            val list = repository.cellsList.value + randomCellType
             repository.addCell(randomCellType)
 
             if (list.size < 3) {

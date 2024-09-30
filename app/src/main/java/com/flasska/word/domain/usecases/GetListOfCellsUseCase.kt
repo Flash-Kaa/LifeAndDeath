@@ -5,5 +5,5 @@ import com.flasska.word.domain.interfaces.CellsRepository
 class GetListOfCellsUseCase(
     private val repository: CellsRepository
 ) {
-    operator fun invoke() = repository.getCells()
+    operator fun invoke() = repository.cellsList
 }

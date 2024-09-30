@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">LifeAndDeath</string>
+    <string name="cell_alive">Живая</string>
+    <string name="cell_death">Мёртвая</string>
+    <string name="cell_life">Жизнь</string>
+    <string name="cell_emoji_alive">💥</string>
+    <string name="cell_emoji_death">💀</string>
+    <string name="cell_emoji_life">🐣</string>
+    <string name="cell_desc_alive">и шевелится!</string>
+    <string name="cell_desc_death">или прикидывается</string>
+    <string name="cell_desc_life">Ку-ку!</string>
+    <string name="main_screen_title">Клеточное наполнение</string>
+    <string name="create_cell">Сотворить</string>
 </resources>

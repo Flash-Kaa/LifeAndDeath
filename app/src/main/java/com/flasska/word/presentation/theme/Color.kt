@@ -1,4 +1,4 @@
-package com.flasska.word.ui.theme
+package com.flasska.word.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

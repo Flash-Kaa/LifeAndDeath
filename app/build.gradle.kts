@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp") version "1.9.0-1.0.13"
 }
 
 android {
@@ -56,8 +57,8 @@ dependencies {
     // DI
     implementation(libs.dagger.android.support)
     implementation(libs.dagger.android)
-    implementation(libs.dagger.android.processor)
-    implementation(libs.dagger.compiler)
+    ksp(libs.dagger.android.processor)
+    ksp(libs.dagger.compiler)
 
 
     implementation(libs.androidx.core.ktx)

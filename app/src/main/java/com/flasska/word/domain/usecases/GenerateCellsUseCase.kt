@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
-class AddRandomCellUseCase(
+class GenerateCellsUseCase(
     private val repository: CellsRepository
 ) {
     private val coroutineScope = CoroutineScope(

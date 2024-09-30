@@ -25,8 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.flasska.word.R
 import com.flasska.word.domain.entities.CellType
-import com.flasska.word.presentation.mainscreen.components.SettingColorToStatusBar
 import com.flasska.word.presentation.mainscreen.components.CellDrawer
+import com.flasska.word.presentation.mainscreen.components.SettingColorToStatusBar
 import com.flasska.word.presentation.theme.Indigo
 import com.flasska.word.presentation.theme.LifeAndDeathTheme
 import com.flasska.word.presentation.theme.Violet

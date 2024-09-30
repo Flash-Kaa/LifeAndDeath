@@ -27,32 +27,31 @@ class GenerateCellsUseCase(
                 return@launch
             }
 
-            val lasts = list.takeLast(3)
-
-            if (needAddLife(lasts)) {
+            if (needAddLife(list)) {
                 repository.addCell(CellType.Life)
                 return@launch
             }
 
-            if (needChangeToDeath(lasts)) {
+            if (needChangeToDeath(list)) {
                 changeLastLifeToDeath(list)
             }
         }
     }
 
     private fun getRandomCell(): CellType {
-        val isAlive = Random.nextBoolean()
-
-        if (isAlive) {
-            return CellType.Alive
-        }
-
-        return CellType.Death
+        val isDeath = Random.nextBoolean()
+        return if (isDeath) CellType.Death else CellType.Alive
     }
 
-    private fun needAddLife(lasts: List<CellType>) = lasts.all { it == CellType.Alive }
+    private fun needAddLife(list: List<CellType>) =
+        list.takeLast(3)
+            .all { it == CellType.Alive }
 
-    private fun needChangeToDeath(lasts: List<CellType>) = lasts.all { it == CellType.Death }
+    private fun needChangeToDeath(list: List<CellType>): Boolean {
+        val lastDeath = list.takeLastWhile { it == CellType.Death }.size
+
+        return lastDeath > 0 && lastDeath % 3 == 0
+    }
 
     private fun changeLastLifeToDeath(list: List<CellType>) {
         val lastLifeIndex = list.lastIndexOf(CellType.Life)

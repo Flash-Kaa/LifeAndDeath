@@ -44,7 +44,7 @@ object CellTypeUtils {
                 getSecondBrushColor()
             ),
 
-        )
+            )
     }
 
     private fun CellType.getFirstBrushColor(): Color {
